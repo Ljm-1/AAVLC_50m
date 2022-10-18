@@ -522,8 +522,7 @@ namespace AAVLC_50m
                             iar_LD = _delegate_get_LD.BeginInvoke(ref srcmat, null, null);
                         }
                         else if (iar_LD.IsCompleted && flags.mirror_recieved)
-                        {
-                            frame_counter_LD++;                                                             //每次LD识别需要在上一次线程结束并且振镜控制结束之后
+                        {                                                        //每次LD识别需要在上一次线程结束并且振镜控制结束之后
                             iar_LD = _delegate_get_LD.BeginInvoke(ref srcmat, null, null);
                         }
                     }
@@ -597,8 +596,8 @@ namespace AAVLC_50m
                 }
 
                 /*UI界面上的信息更新*/
-                textBox7.Text = frame_counter_LD.ToString();                    //光斑识别的帧数
-                textBox3.Text = frame_counter_X.ToString();                     //标识物识别的帧数
+                textBox7.Text = frame_counter_LD.ToString();                    //光斑识别成功的帧数
+                textBox3.Text = frame_counter_X.ToString();                     //标识物识别成功的帧数
                 textBox4.Text = fps_X.ToString() + "-" + fps_LD.ToString();     //标识物识别成功的帧率、光斑识别成功的帧率
                 checkBox2.Checked = flags.LD_finded;                            //光斑识别结果标志
                 checkBox3.Checked = flags.cover;                                //是否覆盖标志
@@ -929,6 +928,7 @@ namespace AAVLC_50m
 
                 cal_x = (int)circles[0].Center.X - width / 2;                                                       //转成图像坐标系下坐标
                 cal_y = (int)circles[0].Center.Y - height / 2;
+                ++frame_counter_X;
             }
             else
             {
@@ -1037,6 +1037,7 @@ namespace AAVLC_50m
                 if (Max_rate > LD_thre * 255)                                                   //仅认定当比例高于阈值时，寻找成功
                 {
                     flags.LD_finded = true;
+                    ++frame_counter_LD;
 
                     //part2用于判别接收点是否被激光覆盖
                     Mat bi_part2 = part1.Threshold(250,255,ThresholdTypes.Binary);              //进行二值化
