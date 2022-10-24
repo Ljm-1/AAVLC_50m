@@ -754,15 +754,15 @@
             65536});
             this.numericUpDown8.Location = new System.Drawing.Point(207, 15);
             this.numericUpDown8.Maximum = new decimal(new int[] {
-            300,
+            1000,
             0,
             0,
             0});
             this.numericUpDown8.Minimum = new decimal(new int[] {
-            10,
+            1000,
             0,
             0,
-            0});
+            -2147483648});
             this.numericUpDown8.Name = "numericUpDown8";
             this.numericUpDown8.Size = new System.Drawing.Size(59, 21);
             this.numericUpDown8.TabIndex = 41;
@@ -783,12 +783,12 @@
             65536});
             this.numericUpDown11.Location = new System.Drawing.Point(72, 15);
             this.numericUpDown11.Maximum = new decimal(new int[] {
-            300,
+            1000,
             0,
             0,
             0});
             this.numericUpDown11.Minimum = new decimal(new int[] {
-            300,
+            1000,
             0,
             0,
             -2147483648});
@@ -812,12 +812,12 @@
             65536});
             this.numericUpDown12.Location = new System.Drawing.Point(129, 15);
             this.numericUpDown12.Maximum = new decimal(new int[] {
-            300,
+            1000,
             0,
             0,
             0});
             this.numericUpDown12.Minimum = new decimal(new int[] {
-            300,
+            1000,
             0,
             0,
             -2147483648});
@@ -845,7 +845,7 @@
             this.numericUpDown7.DecimalPlaces = 4;
             this.numericUpDown7.Location = new System.Drawing.Point(72, 50);
             this.numericUpDown7.Maximum = new decimal(new int[] {
-            1000,
+            100000,
             0,
             0,
             0});

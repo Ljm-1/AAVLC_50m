@@ -761,6 +761,7 @@ namespace AAVLC_50m
 
         private void button5_Click(object sender, EventArgs e)
         {//拍照按钮，存储当前帧图片
+            sendData(0, 0);
             if (_latestDisplayBitmap!=null)
             {
                 send_test++;                                                                        //此参数用于标识当前保存的图片
@@ -772,10 +773,8 @@ namespace AAVLC_50m
             }
             else
             {
-                MessageBox.Show("Please connect the camera first.");
+                //MessageBox.Show("Please connect the camera first.");
             }
-
-
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
@@ -1010,9 +1009,9 @@ namespace AAVLC_50m
                 //二值化并进行均值滤波，寻找最大点作为LD中心
                 Mat part1 = new Mat(red_mat, new OpenCvSharp.Range(start_r, stop_r),            //裁剪红色通道
                                             new OpenCvSharp.Range(start_c, stop_c)).Clone();
-                Mat bi_part = part1.Threshold(250, 255, ThresholdTypes.Binary);                 //根据阈值二值化，筛选高像素点
+                //Mat bi_part = part1.Threshold(250, 255, ThresholdTypes.Binary);                 //根据阈值二值化，筛选高像素点
                  // Mat part1 = new Mat(bi_part, new OpenCvSharp.Range(start_r, stop_r), new OpenCvSharp.Range(start_c, stop_c)).Clone();
-                Mat mean = bi_part.Blur(new OpenCvSharp.Size(win_LD, win_LD));                  //进行均值滤波，此处作用相当于滑动窗统计窗内高像素占比
+                Mat mean = part1.Blur(new OpenCvSharp.Size(win_LD, win_LD),borderType:BorderTypes.Wrap);                  //进行均值滤波，此处作用相当于滑动窗统计窗内高像素占比
 
                 #region 识别连通域处理，暂时未用到8
                 /*下面一部分注释，为识别连通域处理，暂时未用到*/
@@ -1039,7 +1038,7 @@ namespace AAVLC_50m
                     flags.LD_finded = true;
                     ++frame_counter_LD;
 
-                    //part2用于判别接收点是否被激光覆盖
+                    //part2用于判别接收点是否被激光覆盖 
                     Mat bi_part2 = part1.Threshold(250,255,ThresholdTypes.Binary);              //进行二值化
                     Mat part2 = new Mat(bi_part2, new OpenCvSharp.Range(Math.Max(center_y + delt_Y_c2c  - start_r - win_center, 0),         //裁剪覆盖区域的图像
                                                                         Math.Min(center_y + delt_Y_c2c - start_r + win_center, height)),
