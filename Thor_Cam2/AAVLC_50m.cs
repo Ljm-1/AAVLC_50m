@@ -115,7 +115,7 @@ namespace AAVLC_50m
         int T_mirror = 10,T_fps = 1000;                                     //振镜定时时间100ms
         int frame_X_last, frame_LD_last, fps_X, fps_LD = 0;
         double delt_x1, delt_y1, delt_x2, delt_y2;                          //上一次执行时的偏差，进行微分控制
-        double kp = 0.0002, ki, kd = 0.0001;                                //0.0002，0.0001，PID算法参数
+        double kp = 0.00004, ki, kd = 0.00001;                                //0.0002，0.0001，PID算法参数
         //int frame_record;
         //double[] delt_th;
 
@@ -911,7 +911,7 @@ namespace AAVLC_50m
 
             circles_temp = Cv2.HoughCircles(circle_search_mat, HoughModes.GradientAlt,                              //霍夫圆法找圆环，参数说明：输入图像，寻找方法
                                             2, 80, 200, 0.75,                                                       //分辨率降低倍数，圆环间最小距离，边缘检测高阈值，累加器阈值（<1,越大越圆）
-                                            10/(int)bin, 20/(int)bin);                                             //最小半径，最大半径，
+                                            80/(int)bin, 180/(int)bin);                                             //最小半径，最大半径，
 
             if (circles_temp.Length == 1)                                                                           //当有且仅有一个圆环时，认定找到目标    
             {
@@ -1011,7 +1011,7 @@ namespace AAVLC_50m
                                             new OpenCvSharp.Range(start_c, stop_c)).Clone();
                 //Mat bi_part = part1.Threshold(250, 255, ThresholdTypes.Binary);                 //根据阈值二值化，筛选高像素点
                  // Mat part1 = new Mat(bi_part, new OpenCvSharp.Range(start_r, stop_r), new OpenCvSharp.Range(start_c, stop_c)).Clone();
-                Mat mean = part1.Blur(new OpenCvSharp.Size(win_LD, win_LD),borderType:BorderTypes.Wrap);                  //进行均值滤波，此处作用相当于滑动窗统计窗内高像素占比
+                Mat mean = part1.Blur(new OpenCvSharp.Size(win_LD, win_LD));                  //进行均值滤波，此处作用相当于滑动窗统计窗内高像素占比
 
                 #region 识别连通域处理，暂时未用到8
                 /*下面一部分注释，为识别连通域处理，暂时未用到*/
