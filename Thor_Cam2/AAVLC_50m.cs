@@ -115,7 +115,7 @@ namespace AAVLC_50m
         int T_mirror = 10,T_fps = 1000;                                     //振镜定时时间100ms
         int frame_X_last, frame_LD_last, fps_X, fps_LD = 0;
         double delt_x1, delt_y1, delt_x2, delt_y2;                          //上一次执行时的偏差，进行微分控制
-        double kp = 0.00004, ki, kd = 0.00001;                                //0.0002，0.0001，PID算法参数
+        double kp = 0.000004, ki, kd = 0.000001;                                //0.0002，0.0001，PID算法参数
         //int frame_record;
         //double[] delt_th;
 
@@ -166,7 +166,9 @@ namespace AAVLC_50m
             numericUpDown7.Value = Convert.ToDecimal(Distance);
             numericUpDown8.Value = Convert.ToDecimal(Zm);
             numericUpDown11.Value = Convert.ToDecimal(Xm);
+            trackBar1.Value = (int)Xm;
             numericUpDown12.Value = Convert.ToDecimal(Ym);
+            trackBar2.Value = (int)Ym;
             numericUpDown9.Value = Convert.ToDecimal(delt_X_c2c);
             numericUpDown10.Value = Convert.ToDecimal(delt_Y_c2c);
             numericUpDown15.Value = Convert.ToDecimal(added_bias[0]);
@@ -669,11 +671,23 @@ namespace AAVLC_50m
         private void numericUpDown11_ValueChanged(object sender, EventArgs e)
         {//修改振镜在相机坐标下的X方向坐标
             Xm = (double)numericUpDown11.Value;
+            trackBar1.Value = (int)Xm;
         }
 
         private void numericUpDown12_ValueChanged(object sender, EventArgs e)
         {//修改振镜在相机坐标系下的Y方向坐标
             Ym = (double)numericUpDown12.Value;
+            trackBar2.Value = (int)Ym;
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            this.numericUpDown11.Value = trackBar1.Value;
+        }
+
+        private void trackBar2_Scroll(object sender, EventArgs e)
+        {
+            this.numericUpDown12.Value = trackBar2.Value;
         }
 
         private void checkBox6_CheckedChanged(object sender, EventArgs e)
@@ -761,7 +775,6 @@ namespace AAVLC_50m
 
         private void button5_Click(object sender, EventArgs e)
         {//拍照按钮，存储当前帧图片
-            sendData(0, 0);
             if (_latestDisplayBitmap!=null)
             {
                 send_test++;                                                                        //此参数用于标识当前保存的图片
@@ -894,6 +907,7 @@ namespace AAVLC_50m
             Mat circle_search_mat =  new Mat();                                                                     //圆形寻找区域
             Cv2.CvtColor(srcmat, circle_search_mat, ColorConversionCodes.BGR2GRAY);                                 //在灰度图上进行寻找圆环
             int base_c =0, base_r = 0;                                                                              //寻找区域的开始像素行列
+            //Cv2.BitwiseNot(red_mat, circle_search_mat);
 
             if (!general)                                                                                           //此处根据标志设置搜找范围，默认为全图
             {
@@ -911,7 +925,7 @@ namespace AAVLC_50m
 
             circles_temp = Cv2.HoughCircles(circle_search_mat, HoughModes.GradientAlt,                              //霍夫圆法找圆环，参数说明：输入图像，寻找方法
                                             2, 80, 200, 0.75,                                                       //分辨率降低倍数，圆环间最小距离，边缘检测高阈值，累加器阈值（<1,越大越圆）
-                                            80/(int)bin, 180/(int)bin);                                             //最小半径，最大半径，
+                                            50/(int)bin, 280/(int)bin);                                             //最小半径，最大半径，
 
             if (circles_temp.Length == 1)                                                                           //当有且仅有一个圆环时，认定找到目标    
             {
