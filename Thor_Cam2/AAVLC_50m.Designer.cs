@@ -75,8 +75,8 @@
             this.numericUpDown15 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
@@ -84,10 +84,10 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.trackBar2 = new System.Windows.Forms.TrackBar();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
-            this.numericUpDown11 = new System.Windows.Forms.NumericUpDown();
             this.label19 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.numericUpDown8 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown11 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown12 = new System.Windows.Forms.NumericUpDown();
             this.label14 = new System.Windows.Forms.Label();
             this.numericUpDown7 = new System.Windows.Forms.NumericUpDown();
@@ -102,6 +102,10 @@
             this.numericUpDown13 = new System.Windows.Forms.NumericUpDown();
             this.pictureBoxLiveImage = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.label20 = new System.Windows.Forms.Label();
+            this.numericUpDown18 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown19 = new System.Windows.Forms.NumericUpDown();
+            this.label21 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -119,8 +123,8 @@
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).BeginInit();
             this.panel6.SuspendLayout();
@@ -130,6 +134,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLiveImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown18)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown19)).BeginInit();
             this.SuspendLayout();
             // 
             // button_1
@@ -394,7 +400,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(207, 6);
+            this.button7.Location = new System.Drawing.Point(211, 6);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(58, 23);
             this.button7.TabIndex = 20;
@@ -496,6 +502,10 @@
             // 
             this.panel8.BackColor = System.Drawing.Color.AliceBlue;
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel8.Controls.Add(this.label21);
+            this.panel8.Controls.Add(this.numericUpDown19);
+            this.panel8.Controls.Add(this.numericUpDown18);
+            this.panel8.Controls.Add(this.label20);
             this.panel8.Controls.Add(this.label17);
             this.panel8.Controls.Add(this.numericUpDown9);
             this.panel8.Controls.Add(this.label15);
@@ -505,16 +515,16 @@
             this.panel8.Controls.Add(this.numericUpDown15);
             this.panel8.Controls.Add(this.numericUpDown4);
             this.panel8.Controls.Add(this.label7);
-            this.panel8.Controls.Add(this.label9);
             this.panel8.Controls.Add(this.numericUpDown3);
+            this.panel8.Controls.Add(this.label9);
             this.panel8.Controls.Add(this.label10);
             this.panel8.Controls.Add(this.numericUpDown5);
             this.panel8.Controls.Add(this.numericUpDown6);
             this.panel8.Controls.Add(this.label11);
             this.panel8.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.panel8.Location = new System.Drawing.Point(0, 231);
+            this.panel8.Location = new System.Drawing.Point(0, 194);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(281, 116);
+            this.panel8.Size = new System.Drawing.Size(281, 153);
             this.panel8.TabIndex = 17;
             // 
             // label17
@@ -529,7 +539,7 @@
             // 
             // numericUpDown9
             // 
-            this.numericUpDown9.Location = new System.Drawing.Point(113, 7);
+            this.numericUpDown9.Location = new System.Drawing.Point(115, 42);
             this.numericUpDown9.Maximum = new decimal(new int[] {
             200,
             0,
@@ -548,7 +558,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(40, 9);
+            this.label15.Location = new System.Drawing.Point(42, 44);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(53, 12);
             this.label15.TabIndex = 42;
@@ -556,7 +566,7 @@
             // 
             // numericUpDown10
             // 
-            this.numericUpDown10.Location = new System.Drawing.Point(176, 7);
+            this.numericUpDown10.Location = new System.Drawing.Point(178, 42);
             this.numericUpDown10.Maximum = new decimal(new int[] {
             200,
             0,
@@ -575,7 +585,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(40, 38);
+            this.label6.Location = new System.Drawing.Point(42, 73);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 12);
             this.label6.TabIndex = 51;
@@ -583,7 +593,7 @@
             // 
             // numericUpDown16
             // 
-            this.numericUpDown16.Location = new System.Drawing.Point(176, 33);
+            this.numericUpDown16.Location = new System.Drawing.Point(178, 68);
             this.numericUpDown16.Maximum = new decimal(new int[] {
             40,
             0,
@@ -602,7 +612,7 @@
             // 
             // numericUpDown15
             // 
-            this.numericUpDown15.Location = new System.Drawing.Point(112, 34);
+            this.numericUpDown15.Location = new System.Drawing.Point(114, 69);
             this.numericUpDown15.Maximum = new decimal(new int[] {
             40,
             0,
@@ -627,7 +637,7 @@
             0,
             0,
             131072});
-            this.numericUpDown4.Location = new System.Drawing.Point(227, 61);
+            this.numericUpDown4.Location = new System.Drawing.Point(224, 123);
             this.numericUpDown4.Maximum = new decimal(new int[] {
             50,
             0,
@@ -651,24 +661,15 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(45, 63);
+            this.label7.Location = new System.Drawing.Point(47, 98);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(53, 12);
             this.label7.TabIndex = 20;
             this.label7.Text = "接收区域";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(184, 63);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(41, 12);
-            this.label9.TabIndex = 22;
-            this.label9.Text = "LD阈值";
-            // 
             // numericUpDown3
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(110, 61);
+            this.numericUpDown3.Location = new System.Drawing.Point(112, 96);
             this.numericUpDown3.Maximum = new decimal(new int[] {
             25,
             0,
@@ -689,10 +690,19 @@
             0});
             this.numericUpDown3.ValueChanged += new System.EventHandler(this.numericUpDown3_ValueChanged);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(167, 124);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(41, 12);
+            this.label9.TabIndex = 22;
+            this.label9.Text = "LD阈值";
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(184, 90);
+            this.label10.Location = new System.Drawing.Point(47, 126);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(41, 12);
             this.label10.TabIndex = 29;
@@ -705,7 +715,7 @@
             0,
             0,
             0});
-            this.numericUpDown5.Location = new System.Drawing.Point(227, 88);
+            this.numericUpDown5.Location = new System.Drawing.Point(114, 124);
             this.numericUpDown5.Maximum = new decimal(new int[] {
             41,
             0,
@@ -717,7 +727,7 @@
             0,
             0});
             this.numericUpDown5.Name = "numericUpDown5";
-            this.numericUpDown5.Size = new System.Drawing.Size(45, 21);
+            this.numericUpDown5.Size = new System.Drawing.Size(37, 21);
             this.numericUpDown5.TabIndex = 30;
             this.numericUpDown5.Value = new decimal(new int[] {
             20,
@@ -734,7 +744,7 @@
             0,
             0,
             131072});
-            this.numericUpDown6.Location = new System.Drawing.Point(110, 90);
+            this.numericUpDown6.Location = new System.Drawing.Point(225, 96);
             this.numericUpDown6.Maximum = new decimal(new int[] {
             1,
             0,
@@ -758,7 +768,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(45, 92);
+            this.label11.Location = new System.Drawing.Point(166, 98);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(53, 12);
             this.label11.TabIndex = 33;
@@ -777,39 +787,30 @@
             this.panel7.Controls.Add(this.numericUpDown12);
             this.panel7.Controls.Add(this.label14);
             this.panel7.Controls.Add(this.numericUpDown7);
-            this.panel7.Location = new System.Drawing.Point(1, 72);
+            this.panel7.Location = new System.Drawing.Point(3, 65);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(281, 153);
+            this.panel7.Size = new System.Drawing.Size(281, 130);
             this.panel7.TabIndex = 17;
             // 
-            // numericUpDown11
+            // trackBar2
             // 
-            this.numericUpDown11.DecimalPlaces = 1;
-            this.numericUpDown11.Increment = new decimal(new int[] {
-            3,
-            0,
-            0,
-            65536});
-            this.numericUpDown11.Location = new System.Drawing.Point(71, 53);
-            this.numericUpDown11.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.numericUpDown11.Minimum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            -2147483648});
-            this.numericUpDown11.Name = "numericUpDown11";
-            this.numericUpDown11.Size = new System.Drawing.Size(53, 21);
-            this.numericUpDown11.TabIndex = 46;
-            this.numericUpDown11.Value = new decimal(new int[] {
-            21,
-            0,
-            0,
-            0});
-            this.numericUpDown11.ValueChanged += new System.EventHandler(this.numericUpDown11_ValueChanged);
+            this.trackBar2.Location = new System.Drawing.Point(142, 65);
+            this.trackBar2.Maximum = 1000;
+            this.trackBar2.Minimum = -1000;
+            this.trackBar2.Name = "trackBar2";
+            this.trackBar2.Size = new System.Drawing.Size(130, 45);
+            this.trackBar2.TabIndex = 50;
+            this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll);
+            // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(142, 37);
+            this.trackBar1.Maximum = 1000;
+            this.trackBar1.Minimum = -1000;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(130, 45);
+            this.trackBar1.TabIndex = 49;
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
             // label19
             // 
@@ -837,7 +838,7 @@
             0,
             0,
             65536});
-            this.numericUpDown8.Location = new System.Drawing.Point(71, 125);
+            this.numericUpDown8.Location = new System.Drawing.Point(77, 100);
             this.numericUpDown8.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -858,6 +859,35 @@
             0});
             this.numericUpDown8.ValueChanged += new System.EventHandler(this.numericUpDown8_ValueChanged);
             // 
+            // numericUpDown11
+            // 
+            this.numericUpDown11.DecimalPlaces = 1;
+            this.numericUpDown11.Increment = new decimal(new int[] {
+            3,
+            0,
+            0,
+            65536});
+            this.numericUpDown11.Location = new System.Drawing.Point(77, 46);
+            this.numericUpDown11.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numericUpDown11.Minimum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            -2147483648});
+            this.numericUpDown11.Name = "numericUpDown11";
+            this.numericUpDown11.Size = new System.Drawing.Size(53, 21);
+            this.numericUpDown11.TabIndex = 46;
+            this.numericUpDown11.Value = new decimal(new int[] {
+            21,
+            0,
+            0,
+            0});
+            this.numericUpDown11.ValueChanged += new System.EventHandler(this.numericUpDown11_ValueChanged);
+            // 
             // numericUpDown12
             // 
             this.numericUpDown12.DecimalPlaces = 1;
@@ -866,7 +896,7 @@
             0,
             0,
             65536});
-            this.numericUpDown12.Location = new System.Drawing.Point(71, 89);
+            this.numericUpDown12.Location = new System.Drawing.Point(77, 73);
             this.numericUpDown12.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -890,7 +920,7 @@
             // label14
             // 
             this.label14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label14.Location = new System.Drawing.Point(9, 89);
+            this.label14.Location = new System.Drawing.Point(9, 74);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(56, 21);
             this.label14.TabIndex = 39;
@@ -919,26 +949,6 @@
             0,
             0});
             this.numericUpDown7.ValueChanged += new System.EventHandler(this.numericUpDown7_ValueChanged);
-            // 
-            // trackBar2
-            // 
-            this.trackBar2.Location = new System.Drawing.Point(145, 89);
-            this.trackBar2.Name = "trackBar2";
-            this.trackBar2.Size = new System.Drawing.Size(104, 45);
-            this.trackBar2.TabIndex = 50;
-            this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll);
-            this.trackBar2.Maximum = (int)this.numericUpDown12.Maximum;
-            this.trackBar2.Minimum = (int)this.numericUpDown12.Minimum;
-            // 
-            // trackBar1
-            // 
-            this.trackBar1.Location = new System.Drawing.Point(145, 53);
-            this.trackBar1.Maximum = 1000;
-            this.trackBar1.Minimum = -1000;
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(104, 45);
-            this.trackBar1.TabIndex = 49;
-            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
             // panel6
             // 
@@ -1123,6 +1133,70 @@
             this.toolTip1.ShowAlways = true;
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(42, 13);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(53, 12);
+            this.label20.TabIndex = 57;
+            this.label20.Text = "标志尺寸";
+            // 
+            // numericUpDown18
+            // 
+            this.numericUpDown18.Location = new System.Drawing.Point(114, 11);
+            this.numericUpDown18.Maximum = new decimal(new int[] {
+            540,
+            0,
+            0,
+            0});
+            this.numericUpDown18.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown18.Name = "numericUpDown18";
+            this.numericUpDown18.Size = new System.Drawing.Size(37, 21);
+            this.numericUpDown18.TabIndex = 58;
+            this.numericUpDown18.Value = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.numericUpDown18.ValueChanged += new System.EventHandler(this.numericUpDown18_ValueChanged);
+            // 
+            // numericUpDown19
+            // 
+            this.numericUpDown19.Location = new System.Drawing.Point(181, 12);
+            this.numericUpDown19.Maximum = new decimal(new int[] {
+            540,
+            0,
+            0,
+            0});
+            this.numericUpDown19.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown19.Name = "numericUpDown19";
+            this.numericUpDown19.Size = new System.Drawing.Size(37, 21);
+            this.numericUpDown19.TabIndex = 59;
+            this.numericUpDown19.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numericUpDown19.ValueChanged += new System.EventHandler(this.numericUpDown19_ValueChanged);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(156, 17);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(17, 12);
+            this.label21.TabIndex = 60;
+            this.label21.Text = "—";
+            // 
             // AAVLC_50m
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1160,8 +1234,8 @@
             this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).EndInit();
             this.panel6.ResumeLayout(false);
@@ -1172,6 +1246,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLiveImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown18)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown19)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1252,6 +1328,10 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TrackBar trackBar2;
         private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.NumericUpDown numericUpDown19;
+        private System.Windows.Forms.NumericUpDown numericUpDown18;
+        private System.Windows.Forms.Label label20;
     }
 }
 

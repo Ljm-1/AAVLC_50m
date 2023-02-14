@@ -98,6 +98,7 @@ namespace AAVLC_50m
         XmlDocument xmlDoc;
 
         /*单次搜索的相关参数*/
+        private int min_r=20, max_r=280;                                    //圆环识别尺寸设置，最小半径尺寸，最大半径尺寸，（像素）
         private int win_LD = 32;                                            //LD扫描窗尺寸，60（圆环1）,全
         private System.Drawing.Point LD = new System.Drawing.Point(0, 0);
         private int win_center = 15;                                        //中心覆盖啊区域窗尺寸，半
@@ -174,6 +175,8 @@ namespace AAVLC_50m
             numericUpDown15.Value = Convert.ToDecimal(added_bias[0]);
             numericUpDown16.Value = Convert.ToDecimal(added_bias[2]);
             numericUpDown17.Value = Convert.ToDecimal(num_kals);
+            numericUpDown18.Value = Convert.ToDecimal(min_r);
+            numericUpDown19.Value = Convert.ToDecimal(max_r);
 
             //kalman滤波器初始化
             kalman_init();
@@ -685,6 +688,22 @@ namespace AAVLC_50m
             this.numericUpDown11.Value = trackBar1.Value;
         }
 
+        private void numericUpDown18_ValueChanged(object sender, EventArgs e)
+        {
+            if (this.numericUpDown18.Value >= max_r)
+                this.numericUpDown18.Value = min_r;
+            else
+                min_r = (int)this.numericUpDown18.Value;
+        }
+
+        private void numericUpDown19_ValueChanged(object sender, EventArgs e)
+        {
+            if (this.numericUpDown19.Value <= min_r)
+                this.numericUpDown19.Value = max_r;
+            else
+                max_r = (int)this.numericUpDown19.Value;
+        }
+
         private void trackBar2_Scroll(object sender, EventArgs e)
         {
             this.numericUpDown12.Value = trackBar2.Value;
@@ -925,7 +944,7 @@ namespace AAVLC_50m
 
             circles_temp = Cv2.HoughCircles(circle_search_mat, HoughModes.GradientAlt,                              //霍夫圆法找圆环，参数说明：输入图像，寻找方法
                                             2, 80, 200, 0.75,                                                       //分辨率降低倍数，圆环间最小距离，边缘检测高阈值，累加器阈值（<1,越大越圆）
-                                            50/(int)bin, 280/(int)bin);                                             //最小半径，最大半径，
+                                            min_r/(int)bin, max_r/(int)bin);                                             //最小半径，最大半径，
 
             if (circles_temp.Length == 1)                                                                           //当有且仅有一个圆环时，认定找到目标    
             {
@@ -1243,6 +1262,8 @@ namespace AAVLC_50m
             Distance = Convert.ToDouble(((XmlElement)nodeList[10]).GetAttribute("value"));
             Zm = Convert.ToDouble(((XmlElement)nodeList[11]).GetAttribute("value"));
             num_kals = Convert.ToInt32(((XmlElement)nodeList[12]).GetAttribute("value"));
+            min_r = Convert.ToInt32(((XmlElement)nodeList[13]).GetAttribute("value"));
+            max_r = Convert.ToInt32(((XmlElement)nodeList[14]).GetAttribute("value"));
 
             foreach ( XmlNode node in root.ChildNodes)
             {
@@ -1273,6 +1294,8 @@ namespace AAVLC_50m
             ((XmlElement)nodeList[10]).SetAttribute("value", Distance.ToString());
             ((XmlElement)nodeList[11]).SetAttribute("value", Zm.ToString());
             ((XmlElement)nodeList[12]).SetAttribute("value", num_kals.ToString());
+            ((XmlElement)nodeList[13]).SetAttribute("value", min_r.ToString());
+            ((XmlElement)nodeList[14]).SetAttribute("value", max_r.ToString());
 
             //保存参数，用于边缘修正的附加位移值
             foreach (XmlNode node in xmlDoc.DocumentElement.ChildNodes)
